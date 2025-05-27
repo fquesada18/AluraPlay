@@ -1,0 +1,132 @@
+/*Cabecera*/
+.cabecera__container{
+    display: flex; /*Se utiliza flex para iniciar a utilizar Flex Box*/
+    justify-content: space-between; /*Espacio entre los elementos */
+    align-items: center; /*Se alinean los elementos al centro del contenedor*/
+    position: fixed;
+    top: 0;
+}
+
+.cabecera__buscar__item{
+    display: none;
+}
+
+.menu__container{
+    position: fixed;
+    bottom: 0%;
+    height: 100%;
+    width: 100%;
+}
+
+.menu__lista{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.menu__lista li{
+    align-self: center;
+}
+
+.menu__itens{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+/*El elemento nth-child permite trabajar por medio de elementos hermanos 
+como pseudocodigo, los numeros entre parentesis es la posicion del elemento 
+hermano dentro del menu__lista*/
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4){
+    display: none;
+}
+
+/*Seccion superior*/
+.superior__seccion__container{
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /*Sirve para que los elementos no se rompan o dividan*/
+    overflow: scroll;
+    gap: 15px; /*Sirve para agregar espacios entre los elementos*/
+
+}
+
+/*Seccion Videos*/
+.videos__item{
+    height: 303px;
+    width: 280px;  
+    flex-grow: 1;  
+}
+
+.videos__container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+    
+
+/*Footer*/
+.rodapie__container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+/*Para oculta la barra de busqueda cuando se navega en movil*/
+@media (min-width:834px){
+
+    /*Cabecera*/
+    .cabecera__buscar__item{
+        display: block;
+    }
+
+    /*Footer*/
+    .rodapie__container{
+        justify-content: space-between;
+    }
+}
+
+@media (min-width:1440px){
+
+    .menu__container{
+        width: 239px;
+        overflow: scroll;
+    }
+
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4){
+        display: flex;
+    }
+
+    .menu__lista{
+        height: auto;
+        padding: 20px 17px 20px 15px;
+        gap: 15px;
+    }
+
+    .menu__lista:nth-child(3){
+        flex-direction: column-reverse;
+    }
+
+    .menu__itens{
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .videojuegos{
+        order: 3;
+    }
+
+    .peliculas{
+        order: 2;
+    }
+
+    .premium{
+        order: 1;
+    }
+}
